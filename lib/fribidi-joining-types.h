@@ -277,6 +277,7 @@ FRIBIDI_ENTRY const char *fribidi_get_joining_type_name (
   FriBidiJoiningType j		/**< [in] input joining type */
 ) FRIBIDI_GNUC_CONST;
 
+
 #include "fribidi-enddecls.h"
 
 #endif /* !_FRIBIDI_JOINING_TYPES_H */
