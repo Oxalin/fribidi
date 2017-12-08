@@ -40,6 +40,7 @@
 
 #include "fribidi-begindecls.h"
 
+
 #define fribidi_get_par_direction FRIBIDI_NAMESPACE(get_par_direction)
 /**
  * \brief Get base paragraph direction
@@ -83,8 +84,7 @@ FRIBIDI_ENTRY FriBidiParType fribidi_get_par_direction (
  * Returns: Maximum level found plus one, or zero if any error occured
  * (memory allocation failure most probably).
  */
-FRIBIDI_ENTRY FriBidiLevel
-fribidi_get_par_embedding_levels_ex (
+FRIBIDI_ENTRY FriBidiLevel fribidi_get_par_embedding_levels_ex (
   const FriBidiCharType *bidi_types,	/**< [in] input list of bidi types as
             returned by fribidi_get_bidi_types() */
   const FriBidiBracketType *bracket_types,	/**< [in] input list of bracket
@@ -141,6 +141,7 @@ FRIBIDI_ENTRY FriBidiLevel fribidi_reorder_line (
   FriBidiStrIndex *map		/**< [in] a map of string indices which is reordered
 				 * to reflect where each glyph ends up. */
 ) FRIBIDI_GNUC_WARN_UNUSED;
+
 
 #include "fribidi-enddecls.h"
 

@@ -42,25 +42,22 @@
 #include "fribidi-arabic.h"
 #include "fribidi-shape.h"
 
-
 #if FRIBIDI_CHARSETS+0
 # include "fribidi-char-sets.h"
 #endif				/* FRIBIDI_CHARSETS */
-
 
 #ifdef FRIBIDI_NO_DEPRECATED
 #else
 # include "fribidi-deprecated.h"
 #endif				/* !FRIBIDI_NO_DEPRECATED */
 
-
 #include "fribidi-begindecls.h"
-
 
 
 #define fribidi_version_info FRIBIDI_NAMESPACE(version_info)
 /** A string containing the version information of the library. */
 extern const char *fribidi_version_info;
+
 
 #include "fribidi-enddecls.h"
 

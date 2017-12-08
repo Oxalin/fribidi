@@ -37,6 +37,7 @@
 
 #include "fribidi-begindecls.h"
 
+
 /**
  * \defgroup FribidiJoiningTypeBitMasks
  * Define bit masks that joining types are based on, each mask has

@@ -19,7 +19,7 @@
  *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
  *
  * You should have received a copy of the GNU Lesser General Public License
@@ -38,19 +38,17 @@
 
 #include "fribidi-begindecls.h"
 
-typedef enum
-{
+
+typedef enum {
   _FRIBIDI_CHAR_SET_NOT_FOUND,
 # define _FRIBIDI_ADD_CHAR_SET(CHAR_SET, char_set) FRIBIDI_CHAR_SET_##CHAR_SET,
 # include "fribidi-char-sets-list.h"
 # undef _FRIBIDI_ADD_CHAR_SET
   _FRIBIDI_CHAR_SETS_NUM_PLUS_ONE
-}
-FriBidiCharSet;
+} FriBidiCharSet;
 
 #define FRIBIDI_CHAR_SET_NOT_FOUND _FRIBIDI_CHAR_SET_NOT_FOUND
 #define FRIBIDI_CHAR_SETS_NUM (_FRIBIDI_CHAR_SETS_NUM_PLUS_ONE - 1)
-
 
 #define fribidi_charset_to_unicode FRIBIDI_NAMESPACE(charset_to_unicode)
 /**
@@ -94,7 +92,6 @@ FRIBIDI_ENTRY FriBidiCharSet fribidi_parse_charset (
   const char *s			/**< [in] input name of the character set */
 );
 
-
 #define fribidi_char_set_name FRIBIDI_NAMESPACE(char_set_name)
 FRIBIDI_ENTRY const char *fribidi_char_set_name (
   FriBidiCharSet char_set
@@ -109,6 +106,7 @@ FRIBIDI_ENTRY const char *fribidi_char_set_title (
 FRIBIDI_ENTRY const char *fribidi_char_set_desc (
   FriBidiCharSet char_set
 );
+
 
 #include "fribidi-enddecls.h"
 

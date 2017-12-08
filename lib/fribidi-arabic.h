@@ -62,8 +62,7 @@
  * other means for doing Arabic shaping. The set of extra flags that enable
  * this level of Arabic support has a shortcut named FRIBIDI_FLAGS_ARABIC.
  */
-FRIBIDI_ENTRY void
-fribidi_shape_arabic (
+FRIBIDI_ENTRY void fribidi_shape_arabic (
   FriBidiFlags flags, /**< [in] shaping flags */
   const FriBidiLevel *embedding_levels,
   const FriBidiStrIndex len,	/**< [in] input string length */
@@ -71,6 +70,7 @@ fribidi_shape_arabic (
 				* computed by fribidi_join_arabic */
   FriBidiChar *str		/**< [in] string to shape */
 );
+
 
 #include "fribidi-enddecls.h"
 

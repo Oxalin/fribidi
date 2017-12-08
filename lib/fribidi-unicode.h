@@ -32,7 +32,9 @@
 
 #include "fribidi-common.h"
 #include "fribidi-types.h"
+
 #include "fribidi-begindecls.h"
+
 
 /** We do not support surrogates yet */
 #define FRIBIDI_UNICODE_CHARS	(sizeof(FriBidiChar) >= 4 ? 0x110000 : 0xFFFE)

@@ -113,6 +113,7 @@ typedef signed char FriBidiLevel;
 #define FRIBIDI_TYPE_RLO_VAL	( FRIBIDI_MASK_STRONG | FRIBIDI_MASK_EXPLICIT \
 				| FRIBIDI_MASK_RTL | FRIBIDI_MASK_OVERRIDE )
 
+
 /* Weak types */
 
 /** Pop Directional Flag*/
@@ -136,6 +137,7 @@ typedef signed char FriBidiLevel;
 /** Boundary Neutral */
 #define FRIBIDI_TYPE_BN_VAL	( FRIBIDI_MASK_WEAK | FRIBIDI_MASK_SPACE \
 				| FRIBIDI_MASK_BN )
+
 
 /* Neutral types */
 
@@ -356,7 +358,6 @@ typedef uint32_t FriBidiParType;
 
 /* Functions finally */
 
-
 #define fribidi_get_bidi_type FRIBIDI_NAMESPACE(get_bidi_type)
 /**
  * \brief Get character bidi type
@@ -371,8 +372,7 @@ typedef uint32_t FriBidiParType;
  * There are a few macros defined in fribidi-bidi-types.h for querying a bidi
  * type.
  */
-FRIBIDI_ENTRY FriBidiCharType
-fribidi_get_bidi_type (
+FRIBIDI_ENTRY FriBidiCharType fribidi_get_bidi_type (
   FriBidiChar ch		/**< [in] input character */
 ) FRIBIDI_GNUC_CONST;
 
@@ -405,6 +405,7 @@ FRIBIDI_ENTRY void fribidi_get_bidi_types (
 FRIBIDI_ENTRY const char *fribidi_get_bidi_type_name (
   FriBidiCharType t		/**< [in] input bidi type */
 ) FRIBIDI_GNUC_CONST;
+
 
 #include "fribidi-enddecls.h"
 
