@@ -3,23 +3,23 @@
  * Copyright (C) 2004  Sharif FarsiWeb, Inc
  * Copyright (C) 2001, 2002, 2004  Behdad Esfahbod
  * Copyright (C) 1999, 2000, 2017  Dov Grobgeld
- * 
+ *
  * This file is part of GNU FriBidi.
- * 
+ *
  * GNU FriBidi is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public License
  * as published by the Free Software Foundation; either version 2.1
  * of the License, or (at your option) any later version.
- * 
+ *
  * GNU FriBidi is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
  * GNU Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with GNU FriBidi; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
- * 
+ *
  * For licensing issues, contact <fribidi.license@gmail.com> or write to
  * Sharif FarsiWeb, Inc., PO Box 13445-389, Tehran, Iran.
  *
@@ -44,8 +44,8 @@
  * the file BidiMirroring.txt of the Unicode Character Database available at
  * http://www.unicode.org/Public/UNIDATA/BidiMirroring.txt.
  *
- * If  the input character is a declared as a mirroring character in the
- * Unicode standard and has a mirrored equivalent.  The matching mirrored
+ * If the input character is a declared as a mirroring character in the
+ * Unicode standard and has a mirrored equivalent. The matching mirrored
  * character is put in the output, otherwise the input character itself is
  * put.
  *

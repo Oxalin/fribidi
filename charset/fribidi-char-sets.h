@@ -8,22 +8,22 @@
  * Copyright (C) 2004 Sharif FarsiWeb, Inc
  * Copyright (C) 2001,2002 Behdad Esfahbod
  * Copyright (C) 1999,2000 Dov Grobgeld
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
- * 
+ *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this library, in a file named COPYING; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA
- * 
+ *
  * For licensing issues, contact <fribidi.license@gmail.com>.
  */
 #ifndef _FRIBIDI_CHAR_SETS_H
@@ -52,7 +52,7 @@ FriBidiCharSet;
 #define fribidi_charset_to_unicode FRIBIDI_NAMESPACE(charset_to_unicode)
 /* fribidi_charset_to_unicode - convert string to Unicode
  *
- * This function converts an string from a character set, to a Unicode string.
+ * This function converts a string from a character set to a Unicode string.
  *
  * Returns: The length of the new string.
  */
@@ -66,8 +66,8 @@ FRIBIDI_ENTRY FriBidiStrIndex fribidi_charset_to_unicode (
 #define fribidi_unicode_to_charset FRIBIDI_NAMESPACE(unicode_to_charset)
 /* fribidi_unicode_to_charset - convert string from Unicode
  *
- * This function converts a Unicode string to an string in another character
- * set.  It also null-terminates the output string.
+ * This function converts a Unicode string to a string in another character
+ * set. It also null-terminates the output string.
  *
  * Returns: The length of the new string.
  */

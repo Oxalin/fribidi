@@ -6,22 +6,22 @@
  *
  * Copyright (C) 2004 Sharif FarsiWeb, Inc
  * Copyright (C) 2004, 2005 Behdad Esfahbod
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
- * 
+ *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this library, in a file named COPYING; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
  * Boston, MA 02110-1301, USA
- * 
+ *
  * For licensing issues, contact <fribidi.license@gmail.com>.
  */
 #ifndef _FRIBIDI_DEPRECATED_H
@@ -30,7 +30,6 @@
 #include "fribidi-common.h"
 
 #include "fribidi-types.h"
-
 #include "fribidi-bidi-types.h"
 
 #include "fribidi-begindecls.h"
@@ -42,7 +41,7 @@
  *
  * This function is deprecated and only used with other deprecated functions.
  */
-     FRIBIDI_ENTRY fribidi_boolean fribidi_mirroring_status (
+FRIBIDI_ENTRY fribidi_boolean fribidi_mirroring_status (
   void
 ) FRIBIDI_GNUC_DEPRECATED;
 
@@ -51,9 +50,9 @@
  *
  * This function is used to turn character mirroring on or off.
  * Character mirroring is the act of replacing a mirrorable glyph
- * (character), eg. left paranthesis, with the matching glyph, 
+ * (character), eg. left paranthesis, with the matching glyph,
  * eg. right paranthesis, in a right-to-left resolved context.
- * If your rendering engine does mirroring itself, you may want to 
+ * If your rendering engine does mirroring itself, you may want to
  * turn it off here.
  *
  * This flag is on by default.
@@ -79,11 +78,11 @@
 /* fribidi_set_reorder_nsm - set marks reordering on or off
  *
  * This function is used to turn non-spacing marks reordering on or
- * off.  Reordering non-spacing marks is the act of placing non-spacing
+ * off. Reordering non-spacing marks is the act of placing non-spacing
  * marks (bidi class NSM) after their base character in a right-to-left
- * resolved context.  If your rendering engine expects non-spacing marks
+ * resolved context. If your rendering engine expects non-spacing marks
  * always after the base character in the memory representation of the
- * visual string, you need this option on.  An example of where people
+ * visual string, you need this option on. An example of where people
  * may need it off is when rendering in the console when non-spacing
  * marks cannot be applied on top of the base character.
  *
@@ -138,12 +137,12 @@ fribidi_get_type_internal (
 /* fribidi_remove_bidi_marks - remove bidi marks out of an string
  *
  * This function removes the bidi and boundary-neutral marks out of an string
- * and the accompanying lists.  It implements rule X9 of the Unicode
+ * and the accompanying lists. It implements rule X9 of the Unicode
  * Bidirectional Algorithm available at
  * http://www.unicode.org/reports/tr9/#X9, with the exception that it removes
  * U+200E LEFT-TO-RIGHT MARK and U+200F RIGHT-TO-LEFT MARK too.
  *
- * If any of the input lists are NULL, the list is skipped.  If str is the
+ * If any of the input lists are NULL, the list is skipped. If str is the
  * visual string, then positions_to_this is  positions_L_to_V and
  * position_from_this_list is positions_V_to_L;  if str is the logical
  * string, the other way. Moreover, the position maps should be filled with
@@ -154,7 +153,7 @@ fribidi_get_type_internal (
  * 
  * For best results this function should be run on a whole paragraph, not
  * lines; but feel free to do otherwise if you know what you are doing.
- * Deprecated.  Use fribidi_remove_special_chars instead.
+ * Deprecated. Use fribidi_remove_special_chars instead.
  *
  * Returns: New length of the string, or \-1 if an error occured (memory
  * allocation failure most probably).
@@ -176,15 +175,15 @@ fribidi_remove_bidi_marks (
 /* fribidi_log2vis - get visual string
  *
  * This function converts the logical input string to the visual output
- * strings as specified by the Unicode Bidirectional Algorithm.  As a side
+ * strings as specified by the Unicode Bidirectional Algorithm. As a side
  * effect it also generates mapping lists between the two strings, and the
  * list of embedding levels as defined by the algorithm.
  *
  * If NULL is passed as any of the the lists, the list is ignored and not
  * filled.
  *
- * This function is obsolete because it only handles one-line paragraphs. 
- * Please consider using other functions instead.  Deprecated.
+ * This function is obsolete because it only handles one-line paragraphs.
+ * Please consider using other functions instead. Deprecated.
  *
  * Returns: Maximum level found plus one, or zero if any error occured
  * (memory allocation failure most probably).

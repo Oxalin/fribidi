@@ -6,17 +6,17 @@
  *
  * Copyright (C) 2004 Sharif FarsiWeb, Inc.
  * Copyright (C) 2001,2002 Behdad Esfahbod
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
- * 
+ *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this library, in a file named COPYING; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
@@ -207,7 +207,7 @@ typedef uint8_t FriBidiArabicProp;
  * provided in file ArabicShaping.txt and UnicodeData.txt of the Unicode
  * Character Database available at
  * http://www.unicode.org/Public/UNIDATA/ArabicShaping.txt and
- * http://www.unicode.org/Public/UNIDATA/UnicodeData.txt. 
+ * http://www.unicode.org/Public/UNIDATA/UnicodeData.txt.
  *
  * There are a few macros defined in fribidi-joining-types.h for querying a
  * joining type.
@@ -220,11 +220,11 @@ fribidi_get_joining_type (
 #define fribidi_get_joining_types FRIBIDI_NAMESPACE(get_joining_types)
 /* fribidi_get_joining_types - get joining types for an string of characters
  *
- * This function finds the joining types of an string of characters.  See
+ * This function finds the joining types of an string of characters. See
  * fribidi_get_joining_type for more information about the joining types
  * returned by this function.
  */
-     FRIBIDI_ENTRY void fribidi_get_joining_types (
+FRIBIDI_ENTRY void fribidi_get_joining_types (
   const FriBidiChar *str,	/* input string */
   const FriBidiStrIndex len,	/* input string length */
   FriBidiJoiningType *jtypes	/* output joining types */
@@ -233,14 +233,14 @@ fribidi_get_joining_type (
 #define fribidi_get_joining_type_name FRIBIDI_NAMESPACE(get_joining_type_name)
 /* fribidi_get_joining_type_name - get joining type name
  *
- * This function returns the joining type name of a joining type.  The
+ * This function returns the joining type name of a joining type. The
  * returned string is a static string and should not be freed.
  *
  * The type names are the same as ones defined in Table 8-2  Primary Arabic
  * Joining Classes of the Unicode standard available at
  * http://www.unicode.org/versions/Unicode4.0.0/ch08.pdf#G7462.
  */
-     FRIBIDI_ENTRY const char *fribidi_get_joining_type_name (
+FRIBIDI_ENTRY const char *fribidi_get_joining_type_name (
   FriBidiJoiningType j		/* input joining type */
 ) FRIBIDI_GNUC_CONST;
 

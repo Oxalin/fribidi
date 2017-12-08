@@ -6,17 +6,17 @@
  *
  * Copyright (C) 2004 Sharif FarsiWeb, Inc.
  * Copyright (C) 2001,2002 Behdad Esfahbod
- * 
+ *
  * This library is free software; you can redistribute it and/or
  * modify it under the terms of the GNU Lesser General Public
  * License as published by the Free Software Foundation; either
  * version 2.1 of the License, or (at your option) any later version.
- * 
+ *
  * This library is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
  * Lesser General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU Lesser General Public License
  * along with this library, in a file named COPYING; if not, write to the
  * Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
@@ -35,7 +35,7 @@
 
 typedef signed char FriBidiLevel;
 
-/* 
+/*
  * Define bit masks that bidi types are based on, each mask has
  * only one bit set.
  */
@@ -243,7 +243,7 @@ typedef uint32_t FriBidiParType;
 
 
 /*
- * Defining macros for needed queries, It is fully dependent on the 
+ * Defining macros for needed queries, It is fully dependent on the
  * implementation of FriBidiCharType.
  */
 
@@ -375,11 +375,11 @@ fribidi_get_bidi_type (
 #define fribidi_get_bidi_types FRIBIDI_NAMESPACE(get_bidi_types)
 /* fribidi_get_bidi_types - get bidi types for an string of characters
  *
- * This function finds the bidi types of an string of characters.  See
+ * This function finds the bidi types of an string of characters. See
  * fribidi_get_bidi_type() for more information about the bidi types returned
  * by this function.
  */
-     FRIBIDI_ENTRY void fribidi_get_bidi_types (
+FRIBIDI_ENTRY void fribidi_get_bidi_types (
   const FriBidiChar *str,	/* input string */
   const FriBidiStrIndex len,	/* input string length */
   FriBidiCharType *btypes	/* output bidi types */
@@ -388,7 +388,7 @@ fribidi_get_bidi_type (
 #define fribidi_get_bidi_type_name FRIBIDI_NAMESPACE(get_bidi_type_name)
 /* fribidi_get_bidi_type_name - get bidi type name
  *
- * This function returns the bidi type name of a character type.  The
+ * This function returns the bidi type name of a character type. The
  * returned string is a static string and should not be freed.
  *
  * The type names are the same as ones defined in Table 3.7 Bidirectional
@@ -396,7 +396,7 @@ fribidi_get_bidi_type (
  * http://www.unicode.org/reports/tr9/#Bidirectional_Character_Types, with a
  * few modifications: L->LTR, R->RTL, B->BS, S->SS.
  */
-     FRIBIDI_ENTRY const char *fribidi_get_bidi_type_name (
+FRIBIDI_ENTRY const char *fribidi_get_bidi_type_name (
   FriBidiCharType t		/* input bidi type */
 ) FRIBIDI_GNUC_CONST;
 
