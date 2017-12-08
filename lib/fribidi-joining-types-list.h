@@ -1,7 +1,11 @@
 #ifndef __FRIBIDI_DOC
-/* FriBidi
- * fribidi-joining-types-list.h - list of joining types
+/* FriBidi */
+/**
+ * \file fribidi-joining-types-list.h
+ * \brief List of joining types
  *
+ */
+/*
  * Author:
  *   Behdad Esfahbod, 2004
  *
@@ -31,13 +35,13 @@
 # define _FRIBIDI_ADD_TYPE(x,y)
 #endif
 
-_FRIBIDI_ADD_TYPE (U, '|')	/* nUn-joining, e.g. Full Stop */
-_FRIBIDI_ADD_TYPE (R, '<')	/* Right-joining, e.g. Arabic Letter Dal */
-_FRIBIDI_ADD_TYPE (D, '+')	/* Dual-joining, e.g. Arabic Letter Ain */
-_FRIBIDI_ADD_TYPE (C, '-')	/* join-Causing, e.g. Tatweel, ZWJ */
-_FRIBIDI_ADD_TYPE (T, '^')	/* Transparent, e.g. Arabic Fatha */
-_FRIBIDI_ADD_TYPE (L, '>')	/* Left-joining, i.e. fictional */
-_FRIBIDI_ADD_TYPE (G, '~')	/* iGnored, e.g. LRE, RLE, ZWNBSP */
+_FRIBIDI_ADD_TYPE (U, '|')	/**< nUn-joining, e.g. Full Stop */
+_FRIBIDI_ADD_TYPE (R, '<')	/**< Right-joining, e.g. Arabic Letter Dal */
+_FRIBIDI_ADD_TYPE (D, '+')	/**< Dual-joining, e.g. Arabic Letter Ain */
+_FRIBIDI_ADD_TYPE (C, '-')	/**< join-Causing, e.g. Tatweel, ZWJ */
+_FRIBIDI_ADD_TYPE (T, '^')	/**< Transparent, e.g. Arabic Fatha */
+_FRIBIDI_ADD_TYPE (L, '>')	/**< Left-joining, i.e. fictional */
+_FRIBIDI_ADD_TYPE (G, '~')	/**< iGnored, e.g. LRE, RLE, ZWNBSP */
 
 #ifndef __FRIBIDI_DOC
 /* *INDENT-ON* */

@@ -1,5 +1,7 @@
-/* FriBidi
- * fribidi.h - Unicode bidirectional and Arabic joining/shaping algorithms
+/* FriBidi */
+/**
+ * \file fribidi.h
+ * \brief Unicode bidirectional and Arabic joining/shaping algorithms
  *
  * Author:
  *   Behdad Esfahbod, 2004
@@ -57,7 +59,7 @@
 
 
 #define fribidi_version_info FRIBIDI_NAMESPACE(version_info)
-/* An string containing the version information of the library. */
+/** A string containing the version information of the library. */
 extern const char *fribidi_version_info;
 
 #include "fribidi-enddecls.h"

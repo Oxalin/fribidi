@@ -1,6 +1,9 @@
-/* FriBidi
- * fribidi-flags.h - option flags
- *
+/* FriBidi */
+/**
+ * \file fribidi-flags.h
+ * \brief Option flags
+ */
+/*
  * Author:
  *   Behdad Esfahbod, 2005
  *

@@ -1,5 +1,7 @@
-/* FriBidi
- * fribidi-types.h - define data types for the rest of the library
+/* FriBidi */
+/**
+ * \file fribidi-types.h
+ * \brief Define data types for the rest of the library
  *
  * Author:
  *   Behdad Esfahbod, 2001, 2002, 2004
@@ -51,10 +53,10 @@ typedef int fribidi_boolean;
 typedef uint32_t FriBidiChar;
 typedef int FriBidiStrIndex;
 
-/* The MSB is used to indicate an opening bracket */
+/** The MSB is used to indicate an opening bracket */
 typedef FriBidiChar FriBidiBracketType;
 
-/* Use FRIBIDI_NO_BRACKET for assigning to a non-bracket */
+/** Used for assigning to a non-bracket */
 #define FRIBIDI_NO_BRACKET 0
 
 /* A few macros for working with bits */

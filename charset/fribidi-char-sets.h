@@ -1,6 +1,9 @@
-/* FriBidi
- * fribidi-char-sets.h - character set conversion routines
- *
+/* FriBidi */
+/**
+ * \file fribidi-char-sets.h
+ * \brief character set conversion routines
+ */
+/*
  * Authors:
  *   Behdad Esfahbod, 2001, 2002, 2004
  *   Dov Grobgeld, 1999, 2000
@@ -50,21 +53,23 @@ FriBidiCharSet;
 
 
 #define fribidi_charset_to_unicode FRIBIDI_NAMESPACE(charset_to_unicode)
-/* fribidi_charset_to_unicode - convert string to Unicode
+/**
+ * \brief Convert string to Unicode
  *
  * This function converts a string from a character set to a Unicode string.
  *
  * Returns: The length of the new string.
  */
 FRIBIDI_ENTRY FriBidiStrIndex fribidi_charset_to_unicode (
-  FriBidiCharSet char_set,	/* character set to convert from */
-  const char *s,		/* input string encoded in char_set */
-  FriBidiStrIndex len,		/* input string length */
-  FriBidiChar *us		/* output Unicode string */
+  FriBidiCharSet char_set,	/**< [in] character set to convert from */
+  const char *s,		/**< [in] input string encoded in char_set */
+  FriBidiStrIndex len,		/**< [in] input string length */
+  FriBidiChar *us		/**< [out] output Unicode string */
 );
 
 #define fribidi_unicode_to_charset FRIBIDI_NAMESPACE(unicode_to_charset)
-/* fribidi_unicode_to_charset - convert string from Unicode
+/**
+ * \brief Convert string from Unicode
  *
  * This function converts a Unicode string to a string in another character
  * set. It also null-terminates the output string.
@@ -72,20 +77,21 @@ FRIBIDI_ENTRY FriBidiStrIndex fribidi_charset_to_unicode (
  * Returns: The length of the new string.
  */
 FRIBIDI_ENTRY FriBidiStrIndex fribidi_unicode_to_charset (
-  FriBidiCharSet char_set,	/* character set to conver to */
-  const FriBidiChar *us,	/* input Unicode string */
-  FriBidiStrIndex len,		/* input string length */
-  char *s			/* output string encoded in char_set */
+  FriBidiCharSet char_set,	/**< [in] character set to conver to */
+  const FriBidiChar *us,	/**< [in] input Unicode string */
+  FriBidiStrIndex len,		/**< [in] input string length */
+  char *s			/**< [out] output string encoded in char_set */
 );
 
 #define fribidi_parse_charset FRIBIDI_NAMESPACE(parse_charset)
-/* fribidi_parse_charset - parse character set name
+/**
+ * \brief Parse character set name
  *
  * Returns: The character set named s, or FRIBIDI_CHAR_SET_NOT_FOUND if the
  * character set is not available.
  */
 FRIBIDI_ENTRY FriBidiCharSet fribidi_parse_charset (
-  const char *s			/* input name of the character set */
+  const char *s			/**< [in] input name of the character set */
 );
 
 

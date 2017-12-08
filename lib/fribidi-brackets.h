@@ -1,5 +1,8 @@
-/* fribidi-brackets.h - get bracket character property
- *
+/**
+ * \file fribidi-brackets.h
+ * \brief Get bracket character property
+ */
+/*
  * Copyright (C) 2004  Sharif FarsiWeb, Inc
  * Copyright (C) 2001, 2002, 2004  Behdad Esfahbod
  * Copyright (C) 1999, 2000, 2017  Dov Grobgeld
@@ -38,7 +41,8 @@
 #include "fribidi-begindecls.h"
 
 #define fribidi_get_bracket FRIBIDI_NAMESPACE(get_bracket)
-/* fribidi_get_bracket - get bracketed character
+/**
+ * \brief Get bracketed character
  *
  * This function finds the bracketed equivalent of a character as defined in
  * the file BidiBrackets.txt of the Unicode Character Database available at
@@ -53,22 +57,23 @@
  * FRIBIDI_IS_BRACKET(FriBidiBracketType) to test if it is a valid property.
  */
 FRIBIDI_ENTRY FriBidiBracketType fribidi_get_bracket (
-  FriBidiChar ch		    /* input character */
+  FriBidiChar ch		    /**< [in] input character */
 );
 
 #define fribidi_get_brackets FRIBIDI_NAMESPACE(get_brackets)
-/* fribidi_get_brackets - get bracketed characters
+/**
+ * \brief Get bracketed characters
  *
- * This function finds the bracketed characters of an string of characters.
+ * This function finds the bracketed characters of a string of characters.
  * See fribidi_get_bracket() for more information about the bracketed
  * characters returned by this function.
  */
 FRIBIDI_ENTRY void
 fribidi_get_bracket_types (
-  const FriBidiChar *str,           /* input string */
-  const FriBidiStrIndex len,        /* input string length */
-  const FriBidiCharType *types,     /* input bidi types */
-  FriBidiBracketType *btypes        /* output bracketed characters */
+  const FriBidiChar *str,           /**< [in] input string */
+  const FriBidiStrIndex len,        /**< [in] input string length */
+  const FriBidiCharType *types,     /**< [in] input bidi types */
+  FriBidiBracketType *btypes        /**< [out] output bracketed characters */
 );
 
 #define FRIBIDI_BRACKET_OPEN_MASK 0x80000000

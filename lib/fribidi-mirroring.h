@@ -1,5 +1,8 @@
-/* fribidi-mirroring.h - get mirrored character
- *
+/**
+ * \file fribidi-mirroring.h
+ * \brief Get mirrored character
+ */
+/*
  * Copyright (C) 2004  Sharif FarsiWeb, Inc
  * Copyright (C) 2001, 2002, 2004  Behdad Esfahbod
  * Copyright (C) 1999, 2000, 2017  Dov Grobgeld
@@ -38,7 +41,8 @@
 #include "fribidi-begindecls.h"
 
 #define fribidi_get_mirror_char FRIBIDI_NAMESPACE(get_mirror_char)
-/* fribidi_get_mirror_char - get mirrored character
+/**
+ * \brief Get mirrored character
  *
  * This function finds the mirrored equivalent of a character as defined in
  * the file BidiMirroring.txt of the Unicode Character Database available at
@@ -52,12 +56,13 @@
  * Returns: if the character has a mirroring equivalent or not.
  */
 FRIBIDI_ENTRY fribidi_boolean fribidi_get_mirror_char (
-  FriBidiChar ch,		/* input character */
-  FriBidiChar *mirrored_ch	/* output mirrored character */
+  FriBidiChar ch,		/**< [in] input character */
+  FriBidiChar *mirrored_ch	/**< [out] output mirrored character */
 );
 
 #define fribidi_shape_mirroring FRIBIDI_NAMESPACE(shape_mirroring)
-/* fribidi_shape_mirroring - do mirroring shaping
+/**
+ * \brief Do mirroring shaping
  *
  * This functions replaces mirroring characters on right-to-left embeddings in
  * string with their mirrored equivalent as returned by
@@ -67,11 +72,11 @@ FRIBIDI_ENTRY fribidi_boolean fribidi_get_mirror_char (
  * available at http://www.unicode.org/reports/tr9/#L4.
  */
 FRIBIDI_ENTRY void fribidi_shape_mirroring (
-  const FriBidiLevel *embedding_levels,	/* input list of embedding
+  const FriBidiLevel *embedding_levels,	/**< [in] input list of embedding
 					   levels, as returned by
 					   fribidi_get_par_embedding_levels */
-  const FriBidiStrIndex len,	/* input string length */
-  FriBidiChar *str		/* string to shape */
+  const FriBidiStrIndex len,	/**< [in] input string length */
+  FriBidiChar *str		/**< [in,out] string to shape */
 );
 
 #include "fribidi-enddecls.h"

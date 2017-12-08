@@ -1,5 +1,9 @@
-/* FriBidi
- * fribidi-joining-types.h - character joining types
+/* FriBidi */
+/**
+ * \file fribidi-joining-types.h
+ * \brief Character joining types
+ */
+/*
  *
  * Author:
  *   Behdad Esfahbod, 2001, 2002, 2004
@@ -33,47 +37,48 @@
 
 #include "fribidi-begindecls.h"
 
-/* 
+/**
  * Define bit masks that joining types are based on, each mask has
  * only one bit set.
  */
 
-#define FRIBIDI_MASK_JOINS_RIGHT	0x01	/* May join to right */
-#define FRIBIDI_MASK_JOINS_LEFT		0x02	/* May join to right */
-#define FRIBIDI_MASK_ARAB_SHAPES	0x04	/* May Arabic shape */
-#define FRIBIDI_MASK_TRANSPARENT	0x08	/* Is transparent */
-#define FRIBIDI_MASK_IGNORED		0x10	/* Is ignored */
-#define FRIBIDI_MASK_LIGATURED		0x20	/* Is ligatured */
+#define FRIBIDI_MASK_JOINS_RIGHT	0x01	/**< May join to right */
+#define FRIBIDI_MASK_JOINS_LEFT		0x02	/**< May join to right */
+#define FRIBIDI_MASK_ARAB_SHAPES	0x04	/**< May Arabic shape */
+#define FRIBIDI_MASK_TRANSPARENT	0x08	/**< Is transparent */
+#define FRIBIDI_MASK_IGNORED		0x10	/**< Is ignored */
+#define FRIBIDI_MASK_LIGATURED		0x20	/**< Is ligatured */
 
-/*
+/**
+/**
  * Define values for FriBidiJoiningType
  */
 
-/* nUn-joining */
+/** nUn-joining */
 #define FRIBIDI_JOINING_TYPE_U_VAL	( 0 )
 
-/* Right-joining */
+/** Right-joining */
 #define FRIBIDI_JOINING_TYPE_R_VAL	\
 	( FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_ARAB_SHAPES )
 
-/* Dual-joining */
+/** Dual-joining */
 #define FRIBIDI_JOINING_TYPE_D_VAL	\
 	( FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT \
 	| FRIBIDI_MASK_ARAB_SHAPES )
 
-/* join-Causing */
+/** join-Causing */
 #define FRIBIDI_JOINING_TYPE_C_VAL	\
 	( FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT )
 
-/* Left-joining */
+/** Left-joining */
 #define FRIBIDI_JOINING_TYPE_L_VAL	\
 	( FRIBIDI_MASK_JOINS_LEFT | FRIBIDI_MASK_ARAB_SHAPES )
 
-/* Transparent */
+/** Transparent */
 #define FRIBIDI_JOINING_TYPE_T_VAL	\
 	( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_ARAB_SHAPES )
 
-/* iGnored */
+/** iGnored */
 #define FRIBIDI_JOINING_TYPE_G_VAL	( FRIBIDI_MASK_IGNORED )
 
 
@@ -92,29 +97,31 @@ typedef enum _FriBidiJoiningTypeEnum FriBidiJoiningType;
 typedef uint8_t FriBidiJoiningType;
 #endif /* !__FRIBIDI_DOC */
 
-/* FriBidiArabicProp is essentially the same type as FriBidiJoiningType, but
- * not limited to the few values returned by fribidi_get_joining_type. */
+/**
+ * FriBidiArabicProp is essentially the same type as FriBidiJoiningType, but
+ * not limited to the few values returned by fribidi_get_joining_type.
+ */
 typedef uint8_t FriBidiArabicProp;
 
-/*
+/**
  * The equivalent of JoiningType values for ArabicProp
  */
 
 /* Primary Arabic Joining Classes (Table 8-2) */
 
-/* nUn-joining */
+/** nUn-joining */
 #define FRIBIDI_IS_JOINING_TYPE_U(p)	\
 	( 0 == ( (p) &	\
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED	\
 		| FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT ) ) )
 
-/* Right-joining */
+/** Right-joining */
 #define FRIBIDI_IS_JOINING_TYPE_R(p)	\
 	( FRIBIDI_MASK_JOINS_RIGHT == ( (p) &	\
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED	\
 		| FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT ) ) )
 
-/* Dual-joining */
+/** Dual-joining */
 #define FRIBIDI_IS_JOINING_TYPE_D(p)	\
 	( ( FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT	\
 	  | FRIBIDI_MASK_ARAB_SHAPES ) == ( (p) &	\
@@ -122,63 +129,64 @@ typedef uint8_t FriBidiArabicProp;
 		| FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT	\
 		| FRIBIDI_MASK_ARAB_SHAPES ) ) )
 
-/* join-Causing */
+/** join-Causing */
 #define FRIBIDI_IS_JOINING_TYPE_C(p)	\
 	( ( FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT ) == ( (p) & \
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED	\
 		| FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT	\
 		| FRIBIDI_MASK_ARAB_SHAPES ) ) )
 
-/* Left-joining */
+/** Left-joining */
 #define FRIBIDI_IS_JOINING_TYPE_L(p)	\
 	( FRIBIDI_MASK_JOINS_LEFT == ( (p) &	\
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED	\
 		| FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT ) ) )
 
-/* Transparent */
+/** Transparent */
 #define FRIBIDI_IS_JOINING_TYPE_T(p)	\
 	( FRIBIDI_MASK_TRANSPARENT == ( (p) &	\
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED ) ) )
 
-/* iGnored */
+/** iGnored */
 #define FRIBIDI_IS_JOINING_TYPE_G(p)	\
 	( FRIBIDI_MASK_IGNORED == ( (p) &	\
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED ) ) )
 
 /* and for Derived Arabic Joining Classes (Table 8-3) */
 
-/* Right join-Causing */
+/** Right join-Causing */
 #define FRIBIDI_IS_JOINING_TYPE_RC(p)	\
 	( FRIBIDI_MASK_JOINS_RIGHT == ( (p) &	\
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED	\
 		| FRIBIDI_MASK_JOINS_RIGHT ) ) )
 
-/* Left join-Causing */
+/** Left join-Causing */
 #define FRIBIDI_IS_JOINING_TYPE_LC(p)	\
 	( FRIBIDI_MASK_JOINS_LEFT == ( (p) &	\
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED	\
 		| FRIBIDI_MASK_JOINS_LEFT ) ) )
 
 
-/*
- * Defining macros for needed queries, It is fully dependent on the 
+
+ /**
+ * Defining macros for needed queries, It is fully dependent on the
  * implementation of FriBidiJoiningType.
  */
 
-/* Joins to right: R, D, C? */
+/** Joins to right: R, D, C? */
 #define FRIBIDI_JOINS_RIGHT(p)	((p) & FRIBIDI_MASK_JOINS_RIGHT)
 
-/* Joins to left: L, D, C? */
+/** Joins to left: L, D, C? */
 #define FRIBIDI_JOINS_LEFT(p)	((p) & FRIBIDI_MASK_JOINS_LEFT)
 
-/* May shape: R, D, L, T? */
+/** May shape: R, D, L, T? */
 #define FRIBIDI_ARAB_SHAPES(p)	((p) & FRIBIDI_MASK_ARAB_SHAPES)
 
-/* Is skipped in joining: T, G? */
+/** Is skipped in joining: T, G? */
 #define FRIBIDI_IS_JOIN_SKIPPED(p)	\
 	((p) & (FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED))
 
-/* Is base that will be shaped: R, D, L? */
+/** Is base that will be shaped: R, D, L? */
 #define FRIBIDI_IS_JOIN_BASE_SHAPES(p)	\
 	( FRIBIDI_MASK_ARAB_SHAPES == ( (p) &	\
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED	\
@@ -195,11 +203,12 @@ typedef uint8_t FriBidiArabicProp;
 #define FRIBIDI_JOIN_SHAPE(p)	\
 	((p) & ( FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT ))
 
+
 /* Functions finally */
 
-
 #define fribidi_get_joining_type FRIBIDI_NAMESPACE(get_joining_type)
-/* fribidi_get_joining_type - get character joining type
+/**
+ * \brief Get character joining type
  *
  * This function returns the joining type of a character as defined in Table
  * 8-2 Primary Arabic Joining Classes of the Unicode standard available at
@@ -214,24 +223,26 @@ typedef uint8_t FriBidiArabicProp;
  */
 FRIBIDI_ENTRY FriBidiJoiningType
 fribidi_get_joining_type (
-  FriBidiChar ch		/* input character */
+  FriBidiChar ch		/**< [in] input character */
 ) FRIBIDI_GNUC_CONST;
 
 #define fribidi_get_joining_types FRIBIDI_NAMESPACE(get_joining_types)
-/* fribidi_get_joining_types - get joining types for an string of characters
+/**
+ * \brief Get joining types for an string of characters
  *
  * This function finds the joining types of an string of characters. See
  * fribidi_get_joining_type for more information about the joining types
  * returned by this function.
  */
 FRIBIDI_ENTRY void fribidi_get_joining_types (
-  const FriBidiChar *str,	/* input string */
-  const FriBidiStrIndex len,	/* input string length */
-  FriBidiJoiningType *jtypes	/* output joining types */
+  const FriBidiChar *str,	/**< [in] input string */
+  const FriBidiStrIndex len,	/**< [in] input string length */
+  FriBidiJoiningType *jtypes	/**< [out] output joining types */
 );
 
 #define fribidi_get_joining_type_name FRIBIDI_NAMESPACE(get_joining_type_name)
-/* fribidi_get_joining_type_name - get joining type name
+/**
+ * \brief Get joining type name
  *
  * This function returns the joining type name of a joining type. The
  * returned string is a static string and should not be freed.
@@ -241,7 +252,7 @@ FRIBIDI_ENTRY void fribidi_get_joining_types (
  * http://www.unicode.org/versions/Unicode4.0.0/ch08.pdf#G7462.
  */
 FRIBIDI_ENTRY const char *fribidi_get_joining_type_name (
-  FriBidiJoiningType j		/* input joining type */
+  FriBidiJoiningType j		/**< [in] input joining type */
 ) FRIBIDI_GNUC_CONST;
 
 #include "fribidi-enddecls.h"

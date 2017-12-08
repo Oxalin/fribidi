@@ -1,6 +1,9 @@
-/* FriBidi
- * fribidi-common.h - common include for library headers
- *
+/* FriBidi */
+/**
+ * \file fribidi-common.h
+ * \brief Common include for library headers
+ */
+/*
  * Author:
  *   Behdad Esfahbod, 2004
  *
@@ -40,12 +43,12 @@
 # include <fribidi-custom.h>
 #endif /* HAVE_FRIBIDI_CUSTOM_H */
 
-/* FRIBIDI_NAMESPACE is a macro used to name library symbols. */
+/** FRIBIDI_NAMESPACE is a macro used to name library symbols. */
 #ifndef FRIBIDI_NAMESPACE
 # define FRIBIDI_NAMESPACE(SYMBOL) fribidi##_##SYMBOL
 #endif /* !FRIBIDI_NAMESPACE */
 
-/* FRIBIDI_ENTRY is a macro used to declare library entry points. */
+/** FRIBIDI_ENTRY is a macro used to declare library entry points. */
 #ifndef FRIBIDI_ENTRY
 #  define FRIBIDI_ENTRY		/* empty */
 #endif /* !FRIBIDI_ENTRY */
@@ -93,8 +96,8 @@
 # define FRIBIDI_GNUC_DEPRECATED
 #endif	/* __GNUC__ */
 
-/* FRIBIDI_BEGIN_DECLS should be used at the beginning of your declarations,
- * so that C++ compilers don't mangle their names.  Use FRIBIDI_END_DECLS at
+/** FRIBIDI_BEGIN_DECLS should be used at the beginning of your declarations,
+ * so that C++ compilers don't mangle their names. Use FRIBIDI_END_DECLS at
  * the end of C declarations. */
 #ifndef FRIBIDI_BEGIN_DECLS
 # ifdef __cplusplus

@@ -1,5 +1,9 @@
-/* FriBidi
- * fribidi-joining.h - Arabic joining algorithm
+/* FriBidi */
+/**
+ * \file fribidi-joining.h
+ * \brief Arabic joining algorithm
+ */
+/*
  *
  * Authors:
  *   Behdad Esfahbod, 2004
@@ -36,7 +40,8 @@
 #include "fribidi-begindecls.h"
 
 #define fribidi_join_arabic FRIBIDI_NAMESPACE(join_arabic)
-/* fribidi_join_arabic - do Arabic joining
+/**
+ * \brief Do Arabic joining
  *
  * This function does the Arabic joining algorithm. Means, given Arabic
  * joining types of the characters in ar_props (don't worry,
@@ -55,16 +60,16 @@
  * Arabic properties computed by this function.
  */
 FRIBIDI_ENTRY void fribidi_join_arabic (
-  const FriBidiCharType *bidi_types,	/* input list of bidi types as
+  const FriBidiCharType *bidi_types,	/**< [in] input list of bidi types as
 					   returned by
 					   fribidi_get_bidi_types() */
-  const FriBidiStrIndex len,	/* input string length */
-  const FriBidiLevel *embedding_levels,	/* input list of embedding
+  const FriBidiStrIndex len,	/**< [in] input string length */
+  const FriBidiLevel *embedding_levels,	/**< [in] input list of embedding
 					   levels, as returned by
 					   fribidi_get_par_embedding_levels */
-  FriBidiArabicProp *ar_props	/* Arabic properties to analyze, initilized by
-				   joining types, as returned by
-				   fribidi_get_joining_types */
+  FriBidiArabicProp *ar_props	/**< [in] Arabic properties to analyze,
+           initilized by joining types, as returned by
+           fribidi_get_joining_types */
 );
 
 #include "fribidi-enddecls.h"

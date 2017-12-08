@@ -1,6 +1,9 @@
-/* FriBidi
- * fribidi-bidi.h - bidirectional algorithm
- *
+/* FriBidi */
+/**
+ * \file fribidi-bidi.h
+ * \brief Bidirectional algorithm
+ */
+/*
  * Authors:
  *   Behdad Esfahbod, 2001, 2002, 2004
  *   Dov Grobgeld, 1999, 2000
@@ -38,7 +41,8 @@
 #include "fribidi-begindecls.h"
 
 #define fribidi_get_par_direction FRIBIDI_NAMESPACE(get_par_direction)
-/* fribidi_get_par_direction - get base paragraph direction
+/**
+ * \brief Get base paragraph direction
  *
  * This function finds the base direction of a single paragraph,
  * as defined by rule P2 of the Unicode Bidirectional Algorithm available at
@@ -57,13 +61,14 @@
  * only LTR, RTL, or ON.
  */
 FRIBIDI_ENTRY FriBidiParType fribidi_get_par_direction (
-  const FriBidiCharType *bidi_types,	/* input list of bidi types as returned by
-					   fribidi_get_bidi_types() */
-  const FriBidiStrIndex len	/* input string length */
+  const FriBidiCharType *bidi_types,	/**< [in] input list of bidi types as
+            returned by fribidi_get_bidi_types() */
+  const FriBidiStrIndex len	/**< [in] input string length */
 );
 
 #define fribidi_get_par_embedding_levels_ex FRIBIDI_NAMESPACE(get_par_embedding_levels_ex)
-/* fribidi_get_par_embedding_levels_ex - get bidi embedding levels of a paragraph
+/**
+ * \brief Get bidi embedding levels of a paragraph
  *
  * This function finds the bidi embedding levels of a single paragraph,
  * as defined by the Unicode Bidirectional Algorithm available at
@@ -80,18 +85,19 @@ FRIBIDI_ENTRY FriBidiParType fribidi_get_par_direction (
  */
 FRIBIDI_ENTRY FriBidiLevel
 fribidi_get_par_embedding_levels_ex (
-  const FriBidiCharType *bidi_types,	/* input list of bidi types as returned by
-					   fribidi_get_bidi_types() */
-  const FriBidiBracketType *bracket_types,	/* input list of bracket types as returned by
-					   fribidi_get_bracket_types() */
-  const FriBidiStrIndex len,	/* input string length of the paragraph */
-  FriBidiParType *pbase_dir,	/* requested and resolved paragraph
+  const FriBidiCharType *bidi_types,	/**< [in] input list of bidi types as
+            returned by fribidi_get_bidi_types() */
+  const FriBidiBracketType *bracket_types,	/**< [in] input list of bracket
+            types as returned by fribidi_get_bracket_types() */
+  const FriBidiStrIndex len,	/**< [in] input string length of the paragraph */
+  FriBidiParType *pbase_dir,	/**< [in,out] requested and resolved paragraph
 				 * base direction */
-  FriBidiLevel *embedding_levels	/* output list of embedding levels */
+  FriBidiLevel *embedding_levels	/**< [out] output list of embedding levels */
 ) FRIBIDI_GNUC_WARN_UNUSED;
 
 #define fribidi_reorder_line FRIBIDI_NAMESPACE(reorder_line)
-/* fribidi_reorder_line - reorder a line of logical string to visual
+/**
+ * \brief Reorder a line of logical string to visual
  *
  * This function reorders the characters in a line of text from logical to
  * final visual order. This function implements part 4 of rule L1, and rules
@@ -122,18 +128,17 @@ fribidi_get_par_embedding_levels_ex (
  * occured (memory allocation failure most probably).
  */
 FRIBIDI_ENTRY FriBidiLevel fribidi_reorder_line (
-  FriBidiFlags flags, /* reorder flags */
-  const FriBidiCharType *bidi_types,	/* input list of bidi types as returned by
-					   fribidi_get_bidi_types() */
-  const FriBidiStrIndex len,	/* input length of the line */
-  const FriBidiStrIndex off,	/* input offset of the beginning of the line
-				   in the paragraph */
-  const FriBidiParType base_dir,	/* resolved paragraph base direction */
-  FriBidiLevel *embedding_levels,	/* input list of embedding levels,
-					   as returned by
-					   fribidi_get_par_embedding_levels */
-  FriBidiChar *visual_str,	/* visual string to reorder */
-  FriBidiStrIndex *map		/* a map of string indices which is reordered
+  FriBidiFlags flags, /**< [in] reorder flags */
+  const FriBidiCharType *bidi_types,	/**< [in] input list of bidi types as
+            returned by fribidi_get_bidi_types() */
+  const FriBidiStrIndex len,	/**< [in] input length of the line */
+  const FriBidiStrIndex off,	/**< [in] input offset of the beginning of the
+            line in the paragraph */
+  const FriBidiParType base_dir,	/**< [in] resolved paragraph base direction */
+  FriBidiLevel *embedding_levels,	/**< [in] input list of embedding levels,
+					   as returned by fribidi_get_par_embedding_levels */
+  FriBidiChar *visual_str,	/**< [in] visual string to reorder */
+  FriBidiStrIndex *map		/**< [in] a map of string indices which is reordered
 				 * to reflect where each glyph ends up. */
 ) FRIBIDI_GNUC_WARN_UNUSED;
 

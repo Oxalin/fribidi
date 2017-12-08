@@ -1,7 +1,10 @@
 #ifndef __FRIBIDI_DOC
-/* FriBidi
- * fribidi-char-sets-list.h - list of supported character sets
- *
+/* FriBidi */
+/**
+ * @file fribidi-char-sets-list.h
+ * #brief list of supported character sets
+ */
+/*
  * Author:
  *   Behdad Esfahbod, 2001, 2002, 2004
  *
@@ -35,14 +38,14 @@
 # define _FRIBIDI_ADD_CHAR_SET_ONE2ONE _FRIBIDI_ADD_CHAR_SET
 #endif /* _FRIBIDI_ADD_CHAR_SET */
 #ifdef _FRIBIDI_ADD_CHAR_SET_OTHERS
-_FRIBIDI_ADD_CHAR_SET_OTHERS (UTF8, utf8)		/* UTF-8 (Unicode) */
-_FRIBIDI_ADD_CHAR_SET_OTHERS (CAP_RTL, cap_rtl)		/* CapRTL (Test) */
+_FRIBIDI_ADD_CHAR_SET_OTHERS (UTF8, utf8)		/**< UTF-8 (Unicode) */
+_FRIBIDI_ADD_CHAR_SET_OTHERS (CAP_RTL, cap_rtl)		/**< CapRTL (Test) */
 #endif /* _FRIBIDI_ADD_CHAR_SET_OTHERS */
 #ifdef _FRIBIDI_ADD_CHAR_SET_ONE2ONE
-_FRIBIDI_ADD_CHAR_SET_ONE2ONE (ISO8859_6, iso8859_6)	/* ISO8859-6 (Arabic) */
-_FRIBIDI_ADD_CHAR_SET_ONE2ONE (ISO8859_8, iso8859_8)	/* ISO8859-8 (Hebrew) */
-_FRIBIDI_ADD_CHAR_SET_ONE2ONE (CP1255, cp1255)		/* CP1255 (MS Hebrew/Yiddish) */
-_FRIBIDI_ADD_CHAR_SET_ONE2ONE (CP1256, cp1256)		/* CP1256 (MS Arabic) */
+_FRIBIDI_ADD_CHAR_SET_ONE2ONE (ISO8859_6, iso8859_6)	/**< ISO8859-6 (Arabic) */
+_FRIBIDI_ADD_CHAR_SET_ONE2ONE (ISO8859_8, iso8859_8)	/**< ISO8859-8 (Hebrew) */
+_FRIBIDI_ADD_CHAR_SET_ONE2ONE (CP1255, cp1255)		/**< CP1255 (MS Hebrew/Yiddish) */
+_FRIBIDI_ADD_CHAR_SET_ONE2ONE (CP1256, cp1256)		/**< CP1256 (MS Arabic) */
 #endif /* _FRIBIDI_ADD_CHAR_SET_ONE2ONE */
 #ifdef _FRIBIDI_ADD_CHAR_SET
 # undef _FRIBIDI_ADD_CHAR_SET_OTHERS

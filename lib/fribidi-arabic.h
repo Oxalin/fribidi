@@ -1,5 +1,8 @@
-/* fribidi-arabic.h - do Arabic shaping to presentation forms
- *
+/**
+ * \file fribidi-arabic.h
+ * \brief Do Arabic shaping to presentation forms
+ */
+/*
  * Copyright (C) 2005  Behdad Esfahbod
  *
  * This file is part of GNU FriBidi.
@@ -38,7 +41,8 @@
 
 
 #define fribidi_shape_arabic FRIBIDI_NAMESPACE(shape_arabic)
-/* fribidi_shape_arabic - do Arabic shaping
+/**
+ * \brief Do Arabic shaping
  *
  * The actual shaping that is done depends on the flags set. Only flags
  * starting with FRIBIDI_FLAG_SHAPE_ARAB_ affect this function.
@@ -60,12 +64,12 @@
  */
 FRIBIDI_ENTRY void
 fribidi_shape_arabic (
-  FriBidiFlags flags, /* shaping flags */
+  FriBidiFlags flags, /**< [in] shaping flags */
   const FriBidiLevel *embedding_levels,
-  const FriBidiStrIndex len,	/* input string length */
-  FriBidiArabicProp *ar_props, /* input/output Arabic properties as
+  const FriBidiStrIndex len,	/**< [in] input string length */
+  FriBidiArabicProp *ar_props, /**< [in] input/output Arabic properties as
 				* computed by fribidi_join_arabic */
-  FriBidiChar *str		/* string to shape */
+  FriBidiChar *str		/**< [in] string to shape */
 );
 
 #include "fribidi-enddecls.h"

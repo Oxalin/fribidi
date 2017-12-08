@@ -1,6 +1,9 @@
-/* FriBidi
- * fribidi-unicode.h - general Unicode definitions
- *
+/* FriBidi */
+/**
+ * \file fribidi-unicode.h
+ * \brief General Unicode definitions
+ */
+/*
  * Author:
  *   Behdad Esfahbod, 2001, 2002, 2004
  *
@@ -28,12 +31,10 @@
 #define _FRIBIDI_UNICODE_H
 
 #include "fribidi-common.h"
-
 #include "fribidi-types.h"
-
 #include "fribidi-begindecls.h"
 
-/* We do not support surrogates yet */
+/** We do not support surrogates yet */
 #define FRIBIDI_UNICODE_CHARS	(sizeof(FriBidiChar) >= 4 ? 0x110000 : 0xFFFE)
 
 /* Unicode version - FRIBIDI_UNICODE_VERSION */
@@ -44,23 +45,25 @@
 #endif /* !DONT_HAVE_FRIBIDI_UNICODE_VERSION_H */
 
 #define fribidi_unicode_version FRIBIDI_NAMESPACE(unicode_version)
-/* An string containing the version the Unicode standard implemented,
- * in the form of "x.y.z", or "unknown". */
+/**
+ * A string containing the version the Unicode standard implemented in the
+ * form of "x.y.z" or "unknown".
+ */
 extern const char *fribidi_unicode_version;
 
 
 /* Unicode Bidirectional Algorithm definitions: */
 
-/* Number of types defined in the bidi algorithm */
+/** Number of types defined in the bidi algorithm */
 #define FRIBIDI_BIDI_NUM_TYPES			19
 
-/* The maximum embedding level value assigned by explicit marks */
+/** The maximum embedding level value assigned by explicit marks */
 #define FRIBIDI_BIDI_MAX_EXPLICIT_LEVEL		125
 
-/* The maximum *number* of different resolved embedding levels: 0-126 */
+/** The maximum *number* of different resolved embedding levels: 0-126 */
 #define FRIBIDI_BIDI_MAX_RESOLVED_LEVELS	127
 
-/* The maximum *number* of nested brackets: 0-63 */
+/** The maximum *number* of nested brackets: 0-63 */
 #define FRIBIDI_BIDI_MAX_NESTED_BRACKET_PAIRS   63
 
 /* A few Unicode characters: */
@@ -95,7 +98,7 @@ extern const char *fribidi_unicode_version;
 /* Misc */
 #define FRIBIDI_CHAR_ZWNBSP		0xFEFF
 
-/* Char we place for a deleted slot, to delete later */
+/** Char we place for a deleted slot to delete later */
 #define FRIBIDI_CHAR_FILL		FRIBIDI_CHAR_ZWNBSP
 
 #include "fribidi-enddecls.h"
