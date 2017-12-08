@@ -37,7 +37,7 @@
 /** We do not support surrogates yet */
 #define FRIBIDI_UNICODE_CHARS	(sizeof(FriBidiChar) >= 4 ? 0x110000 : 0xFFFE)
 
-/* Unicode version - FRIBIDI_UNICODE_VERSION */
+/** Unicode version - FRIBIDI_UNICODE_VERSION */
 #ifdef DONT_HAVE_FRIBIDI_UNICODE_VERSION_H
 # define FRIBIDI_UNICODE_VERSION "unknown"
 #else /* !DONT_HAVE_FRIBIDI_UNICODE_VERSION_H */
@@ -80,34 +80,34 @@ extern const char *fribidi_unicode_version;
  */
 
 /* Bidirectional marks */
-#define FRIBIDI_CHAR_LRM		0x200E
-#define FRIBIDI_CHAR_RLM		0x200F
-#define FRIBIDI_CHAR_LRE		0x202A
-#define FRIBIDI_CHAR_RLE		0x202B
-#define FRIBIDI_CHAR_PDF		0x202C
-#define FRIBIDI_CHAR_LRO		0x202D
-#define FRIBIDI_CHAR_RLO		0x202E
-#define FRIBIDI_CHAR_LRI		0x2066
-#define FRIBIDI_CHAR_RLI		0x2067
-#define FRIBIDI_CHAR_FSI		0x2068
-#define FRIBIDI_CHAR_PDI		0x2069
+#define FRIBIDI_CHAR_LRM		0x200E /**< Left-to-Right Mark */
+#define FRIBIDI_CHAR_RLM		0x200F /**< Right-to-Left Mark */
+#define FRIBIDI_CHAR_LRE		0x202A /**< Left-to-Right Embedding */
+#define FRIBIDI_CHAR_RLE		0x202B /**< Right-to-Left Embedding */
+#define FRIBIDI_CHAR_PDF		0x202C /**< Pop Directional Format */
+#define FRIBIDI_CHAR_LRO		0x202D /**< Left-to-Right Override */
+#define FRIBIDI_CHAR_RLO		0x202E /**< Right-to-Left Override */
+#define FRIBIDI_CHAR_LRI		0x2066 /**< Left-to-Right Isolate */
+#define FRIBIDI_CHAR_RLI		0x2067 /**< Right-to-Left Isolate */
+#define FRIBIDI_CHAR_FSI		0x2068 /**< First Strong Isolate */
+#define FRIBIDI_CHAR_PDI		0x2069 /**< Pop Directional Isolate */
 
 /* Line and Paragraph Separators */
-#define FRIBIDI_CHAR_LS			0x2028
-#define FRIBIDI_CHAR_PS			0x2029
+#define FRIBIDI_CHAR_LS			0x2028 /**< Line separator */
+#define FRIBIDI_CHAR_PS			0x2029 /**< Paragraph separator */
 
 /* Arabic Joining marks */
-#define FRIBIDI_CHAR_ZWNJ		0x200C
-#define FRIBIDI_CHAR_ZWJ		0x200D
+#define FRIBIDI_CHAR_ZWNJ		0x200C /**< Zero-Width Non-Joiner */
+#define FRIBIDI_CHAR_ZWJ		0x200D /**< Zero-Width Joiner */
 
 /* Hebrew and Arabic */
-#define FRIBIDI_CHAR_HEBREW_ALEF	0x05D0
-#define FRIBIDI_CHAR_ARABIC_ALEF	0x0627
-#define FRIBIDI_CHAR_ARABIC_ZERO	0x0660
-#define FRIBIDI_CHAR_PERSIAN_ZERO	0x06F0
+#define FRIBIDI_CHAR_HEBREW_ALEF	0x05D0 /**< Hebrew alef */
+#define FRIBIDI_CHAR_ARABIC_ALEF	0x0627 /**< Arabic alef */
+#define FRIBIDI_CHAR_ARABIC_ZERO	0x0660 /**< Arabic zero */
+#define FRIBIDI_CHAR_PERSIAN_ZERO	0x06F0 /**< Persian zero */
 
 /* Misc */
-#define FRIBIDI_CHAR_ZWNBSP		0xFEFF
+#define FRIBIDI_CHAR_ZWNBSP		0xFEFF /**< Zero-Width No-Break Space */
 
 /** Char we place for a deleted slot to delete later */
 #define FRIBIDI_CHAR_FILL		FRIBIDI_CHAR_ZWNBSP

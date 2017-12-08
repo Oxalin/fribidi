@@ -98,7 +98,7 @@ enum _FriBidiJoiningTypeEnum
 	FRIBIDI_JOINING_TYPE_##TYPE = FRIBIDI_JOINING_TYPE_##TYPE##_VAL,
 # include "fribidi-joining-types-list.h"
 # undef _FRIBIDI_ADD_TYPE
-  _FRIBIDI_JOINING_TYPE_JUNK	/* Don't use this */
+  _FRIBIDI_JOINING_TYPE_JUNK	/**< Don't use this */
 };
 
 #ifdef __FRIBIDI_DOC

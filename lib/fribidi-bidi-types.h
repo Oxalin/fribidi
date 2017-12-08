@@ -83,7 +83,7 @@ typedef signed char FriBidiLevel;
 #define FRIBIDI_MASK_SS		0x00400000L
 #define FRIBIDI_MASK_WS		0x00800000L
 
-/* We reserve a single bit for user's private use: we will never use it. */
+/** We reserve a single bit for user's private use: we will never use it. */
 #define FRIBIDI_MASK_PRIVATE	0x01000000L
 
 
