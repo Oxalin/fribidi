@@ -1,8 +1,8 @@
 #ifndef __FRIBIDI_DOC
 /* FriBidi */
 /**
- * @file fribidi-char-sets-list.h
- * #brief list of supported character sets
+ * \file fribidi-char-sets-list.h
+ * \brief list of supported character sets
  */
 /*
  * Author:
