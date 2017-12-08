@@ -38,8 +38,10 @@
 #include "fribidi-begindecls.h"
 
 /**
+ * \defgroup FribidiJoiningTypeBitMasks
  * Define bit masks that joining types are based on, each mask has
  * only one bit set.
+ * @{
  */
 
 #define FRIBIDI_MASK_JOINS_RIGHT	0x01	/**< May join to right */
@@ -50,8 +52,13 @@
 #define FRIBIDI_MASK_LIGATURED		0x20	/**< Is ligatured */
 
 /**
+ * @}
+ */
+
 /**
+ * \defgroup FriBidiJoiningTypes
  * Define values for FriBidiJoiningType
+ * @{
  */
 
 /** nUn-joining */
@@ -81,6 +88,9 @@
 /** iGnored */
 #define FRIBIDI_JOINING_TYPE_G_VAL	( FRIBIDI_MASK_IGNORED )
 
+/**
+ * @}
+ */
 
 enum _FriBidiJoiningTypeEnum
 {
@@ -104,7 +114,9 @@ typedef uint8_t FriBidiJoiningType;
 typedef uint8_t FriBidiArabicProp;
 
 /**
+ * \defgroup FriBidiArbicPropJoiningTypes
  * The equivalent of JoiningType values for ArabicProp
+ * @{
  */
 
 /* Primary Arabic Joining Classes (Table 8-2) */
@@ -166,11 +178,16 @@ typedef uint8_t FriBidiArabicProp;
 		( FRIBIDI_MASK_TRANSPARENT | FRIBIDI_MASK_IGNORED	\
 		| FRIBIDI_MASK_JOINS_LEFT ) ) )
 
+/**
+ * @}
+ */
 
 
  /**
+  * \defgroup FribidiJoiningQueryMacros
  * Defining macros for needed queries, It is fully dependent on the
  * implementation of FriBidiJoiningType.
+ * @{
  */
 
 /** Joins to right: R, D, C? */
@@ -202,6 +219,10 @@ typedef uint8_t FriBidiArabicProp;
 
 #define FRIBIDI_JOIN_SHAPE(p)	\
 	((p) & ( FRIBIDI_MASK_JOINS_RIGHT | FRIBIDI_MASK_JOINS_LEFT ))
+
+	/**
+	 * @}
+	 */
 
 
 /* Functions finally */

@@ -51,8 +51,11 @@
  */
 extern const char *fribidi_unicode_version;
 
-
-/* Unicode Bidirectional Algorithm definitions: */
+/**
+ * \defgroup UnicodeBidirectionalAlgorithms
+ * Unicode Bidirectional Algorithm definitions
+ * @{
+ */
 
 /** Number of types defined in the bidi algorithm */
 #define FRIBIDI_BIDI_NUM_TYPES			19
@@ -66,7 +69,15 @@ extern const char *fribidi_unicode_version;
 /** The maximum *number* of nested brackets: 0-63 */
 #define FRIBIDI_BIDI_MAX_NESTED_BRACKET_PAIRS   63
 
-/* A few Unicode characters: */
+/**
+ * @}
+ */
+
+/**
+ * \defgroup UnicodeChar
+ * A few Unicode characters
+ * @{
+ */
 
 /* Bidirectional marks */
 #define FRIBIDI_CHAR_LRM		0x200E
@@ -100,6 +111,10 @@ extern const char *fribidi_unicode_version;
 
 /** Char we place for a deleted slot to delete later */
 #define FRIBIDI_CHAR_FILL		FRIBIDI_CHAR_ZWNBSP
+
+/**
+ * @}
+ */
 
 #include "fribidi-enddecls.h"
 

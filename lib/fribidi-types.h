@@ -59,7 +59,11 @@ typedef FriBidiChar FriBidiBracketType;
 /** Used for assigning to a non-bracket */
 #define FRIBIDI_NO_BRACKET 0
 
-/* A few macros for working with bits */
+/**
+ * \defgroup BitModifierMacros
+ * A few macros for working with bits
+ * @{
+ */
 
 #define FRIBIDI_TEST_BITS(x, mask) (((x) & (mask)) ? 1 : 0)
 
@@ -76,6 +80,11 @@ typedef FriBidiChar FriBidiBracketType;
 
 #define FRIBIDI_ADJUST_AND_TEST_BITS(x, mask, cond)	\
 	FRIBIDI_TEST_BITS(FRIBIDI_ADJUST_BITS((x), (mask), (cond)), (mask))
+
+/**
+ *@}
+ */
+
 
 #include "fribidi-enddecls.h"
 

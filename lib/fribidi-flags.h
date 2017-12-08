@@ -35,11 +35,14 @@
 
 #include "fribidi-begindecls.h"
 
+
 typedef uint32_t FriBidiFlags;
 
-/*
+/**
+ * \defgroup FriBidiOptionBitMasks
  * Define option flags that various functions use. Each mask has
  * only one bit set.
+ * @{
  */
 
 #define FRIBIDI_FLAG_SHAPE_MIRRORING	0x00000001
@@ -66,6 +69,11 @@ typedef uint32_t FriBidiFlags;
 #define FRIBIDI_FLAGS_ARABIC		( \
 	FRIBIDI_FLAG_SHAPE_ARAB_PRES	| \
 	FRIBIDI_FLAG_SHAPE_ARAB_LIGA	)
+
+	/**
+	 * @}
+	 */
+
 
 #include "fribidi-enddecls.h"
 
