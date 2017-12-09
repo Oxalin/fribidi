@@ -1,4 +1,5 @@
 default: full
+all: full
 
 %.tag: %.doxy
 	doxygen $<

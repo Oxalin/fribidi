@@ -1,3 +1,5 @@
+SUBDIRS = doxygen
+
 dist_man_MANS =
 dist_noinst_MANS =
 EXTRA_DIST =
