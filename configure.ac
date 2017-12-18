@@ -180,6 +180,29 @@ fi
 fi
 AM_CONDITIONAL(FRIBIDI_USE_GLIB, test x$FRIBIDI_USE_GLIB = x1)
 
+# --disable-doc
+AC_ARG_ENABLE([doc],
+              AC_HELP_STRING([--disable-doc],
+                             [do not build documentation]),
+							,
+							[enable_doc=yes])
+
+if test "x${enable_doc}" = "xyes"; then
+  AC_CHECK_PROG([DOCTOOL], [doxygen], ["found"], ["missing"])
+  AC_SUBST([DOCTOOL])
+
+  case "$DOCTOOL" in
+   missing)
+    AC_MSG_ERROR(['doxygen' needed for documentation not found. Exiting.])
+    ;;
+  esac
+	FRIBIDI_BUILD_DOC=1
+else
+	FRIBIDI_BUILD_DOC=0
+fi
+AC_SUBST(FRIBIDI_BUILD_DOC)
+AM_CONDITIONAL(FRIBIDI_BUILD_DOC, test x$FRIBIDI_BUILD_DOC = x1)
+
 # Generate output
 AC_CONFIG_FILES([fribidi.pc
 		 lib/fribidi-config.h
@@ -189,6 +212,7 @@ AC_CONFIG_FILES([fribidi.pc
 		 lib/Makefile
 		 bin/Makefile
 		 doc/Makefile
+		 doc/doxygen/Makefile
 		 test/Makefile
 		 fribidi-vs-unicode/Makefile])
 AC_OUTPUT
