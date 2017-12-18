@@ -1,5 +1,11 @@
-*.db
-*.tag
-*.tmp
-*.3
-documentation
+/*.bak
+/*.orig
+/*.rej
+/*~
+/*.db
+/*.tag
+/*.tmp
+/*.3
+/Makefile
+/Makefile.in
+/documentation
