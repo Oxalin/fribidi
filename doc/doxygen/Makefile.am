@@ -1,3 +1,5 @@
+if FRIBIDI_BUILD_DOC
+
 default: full
 all: full
 
@@ -14,3 +16,8 @@ clean:
 	-rm -rf $(FULL:.doxy=)
 	-rm -rf *.tag
 	-rm -rf *.db
+
+cleanall:
+
+
+endif # !FRIBIDI_BUILD_DOC
